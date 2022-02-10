@@ -1,0 +1,17 @@
+<app-table-header
+  (onSortSelect)="sortHandler($event)"
+  (onSearchbarChange)="searchHandler($event)"
+></app-table-header>
+<div class="wrapper">
+  <div
+    class="coin-item-wrapper"
+    *ngFor="let coin of coins | sort: sortType | search: searchText"
+  >
+    <app-coin-item
+      [coin]="coin"
+      [isSelected]="coin?.asset_id === selectedItem"
+      [isFavourite]="favouriteCoins[coin?.asset_id]"
+      (onSelectCurrency)="selectItemHandler($event)"
+    ></app-coin-item>
+  </div>
+</div>

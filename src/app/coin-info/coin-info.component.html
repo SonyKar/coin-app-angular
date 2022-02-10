@@ -1,0 +1,40 @@
+<div class="wrapper">
+  <div class="coin-info">
+    <div class="coin-info__control">
+      <a routerLink="/"><fa-icon class="icon" [icon]="backIcon"></fa-icon></a>
+      <h1 class="coin-info__title">{{ coinInfo.name }}</h1>
+    </div>
+    <p class="coin-info__price">${{ coinInfo.price_usd }}</p>
+    <p class="coin-info__description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tortor
+      ac nisl aliquam consectetur. Donec in neque tincidunt, lacinia dui eu,
+      consectetur nisl. In posuere convallis ligula sit amet faucibus.
+    </p>
+    <div class="coin-info__control">
+      <fa-icon
+        class="icon"
+        [icon]="faHeart"
+        (click)="onFavouriteHandler($event)"
+      ></fa-icon>
+      <!-- User control buttons -->
+    </div>
+  </div>
+  <div class="coin-dashboard">
+    <mat-form-field class="coin-dashboard__notes" appearance="fill">
+      <mat-label class="label">Your notes</mat-label>
+      <textarea
+        class="notes"
+        matInput
+        (keyup)="onNotesEditHandler($event)"
+        placeholder="Leave notes about the coin"
+        >{{ notes }}</textarea
+      >
+    </mat-form-field>
+    <p
+      class="notes__status"
+      [ngClass]="{ success: saveStatus === 2, in_progress: saveStatus === 1 }"
+    >
+      {{ saveStatusText }}
+    </p>
+  </div>
+</div>

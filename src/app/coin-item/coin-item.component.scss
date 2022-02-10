@@ -1,0 +1,40 @@
+.coin-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 8px;
+  padding: 25px;
+  background-color: #f3f3f3;
+  box-shadow: 0 3px 3px #ccc;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  box-sizing: border-box;
+  position: relative;
+
+  &:hover,
+  &.selected {
+    background-color: #04aa6d;
+    box-shadow: 0 6px 6px #ccc;
+    color: #fff;
+
+    .favourite__button .icon {
+      color: #fff;
+    }
+  }
+
+  .name {
+    padding-right: 24px;
+  }
+
+  .favourite__button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+
+    .icon {
+      color: #04aa6d;
+      font-size: 1.1rem;
+    }
+  }
+}

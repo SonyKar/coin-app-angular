@@ -1,0 +1,15 @@
+<div
+  class="coin-item"
+  [ngClass]="{ selected: isSelected }"
+  (click)="onSelectCurrencyHandler()"
+>
+  <div class="name">{{ coin.name }}</div>
+  <div class="price">{{ coin.price_usd | currency }}</div>
+  <div class="favourite__button">
+    <fa-icon
+      class="icon"
+      [icon]="faHeart"
+      (click)="onFavouriteHandler($event)"
+    ></fa-icon>
+  </div>
+</div>

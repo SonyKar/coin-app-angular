@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div class="column">
+    <div>
+      <span class="sort__title">Sort by: </span>
+      <select class="sort__select" (change)="onSortSelectHandler($event)">
+        <option value="0">Sort By Name Asc</option>
+        <option value="1">Sort By Name Desc</option>
+        <option value="2">Sort By Price Asc</option>
+        <option value="3">Sort By Price Desc</option>
+      </select>
+    </div>
+  </div>
+  <div class="column">
+    <input
+      class="searchbar"
+      type="text"
+      placeholder="Search"
+      (keyup)="onSearchChangeHandler($event)"
+    />
+  </div>
+  <div class="column"></div>
+</div>
